@@ -7,7 +7,7 @@ function newItem() {
 
   li.append(inputValue);
 
-    // Conditional to make sure a list entry was made.
+  // Conditional to make sure a list entry was made.
   if (inputValue === '') {
     alert("You must write something!");
   } else {
@@ -17,6 +17,18 @@ function newItem() {
 
   //2. Crossing out an item from the list of items, when clicking on it:
   li.on('click', function() {
-      li.addClass("strike");
-    });
+    li.addClass('strike');
+  });
+
+  //3(i). Adding the delete button "X":
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
+  crossOutButton.append(document.createTextNode("X"));
+  li.append(crossOutButton);
+
+  crossOutButton.on('click', deleteListItem);
+
+  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+  function deleteListItem() {
+    li.addClass('delete');
+  }
 }
