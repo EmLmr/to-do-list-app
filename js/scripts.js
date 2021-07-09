@@ -15,4 +15,8 @@ function newItem() {
     list.append(li);
   }
 
+  //2. Crossing out an item from the list of items, when clicking on it:
+  li.on('click', function() {
+      li.addClass("strike");
+    });
 }
