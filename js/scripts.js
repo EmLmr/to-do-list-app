@@ -13,6 +13,7 @@ function newItem() {
   } else {
     let list = $('#list');
     list.append(li);
+    inputValue = $('input').val('');
   }
 
   //2. Crossing out an item from the list of items, when clicking on it:
