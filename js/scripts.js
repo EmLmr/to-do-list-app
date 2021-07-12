@@ -16,8 +16,12 @@ function newItem() {
   }
 
   //2. Crossing out an item from the list of items, when clicking on it:
-  li.on('click', function() {
-    li.addClass('strike');
+  li.on('dblclick', function() {
+    if ($('li').hasClass('strike')) {
+      li.removeClass('strike');
+    } else {
+      li.addClass('strike');
+    }
   });
 
   //3(i). Adding the delete button "X":
